@@ -21,7 +21,7 @@ namespace BulKazan
 
         private void ButtonRabbitProcess()
         {
-
+           
             Random rnd = new Random();
             int x = rnd.Next(255);
             btnOne.BackColor = Color.FromArgb(0, 0, x);
@@ -52,12 +52,12 @@ namespace BulKazan
         void ButtonImageReset()
         {
 
-            foreach (var item in this.Controls)
+            foreach (Control item in this.Controls)
             {
                 if (item is Button)
                 {
                     Button btn = item as Button;
-                    btn.Tag = null;
+              
                     btn.BackgroundImage = null;
                 }
             }
@@ -68,7 +68,7 @@ namespace BulKazan
         void Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-
+            ButtonImageReset();
             if (btn.Tag == @"C:\Users\omerf\source\repos\BulKazan\BulKazan\Image\rabbitRed.png")
             {
                 btn.BackgroundImage = Image.FromFile(btn.Tag.ToString());
