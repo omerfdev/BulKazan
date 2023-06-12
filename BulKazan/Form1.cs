@@ -21,7 +21,7 @@ namespace BulKazan
 
         private void ButtonRabbitProcess()
         {
-           
+
             Random rnd = new Random();
             int x = rnd.Next(255);
             btnOne.BackColor = Color.FromArgb(0, 0, x);
@@ -57,14 +57,11 @@ namespace BulKazan
                 if (item is Button)
                 {
                     Button btn = item as Button;
-              
+
                     btn.BackgroundImage = null;
                 }
             }
-
         }
-
-
         void Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -94,7 +91,8 @@ namespace BulKazan
             {
                 btn.BackgroundImage = Image.FromFile(btn.Tag.ToString());
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
-                ComputerCount++; lblComputerCount.Text = ComputerCount.ToString();  if (ComputerCount == 5)
+                Task.Delay(1000).Wait();
+                ComputerCount++; lblComputerCount.Text = ComputerCount.ToString(); if (ComputerCount == 5)
                 {
                     MessageBox.Show("Computer Win", "Tekrar Oynamak İster Misiniz?", MessageBoxButtons.YesNo);
                     if (DialogResult == DialogResult.Yes)
@@ -108,7 +106,7 @@ namespace BulKazan
                 }
             }
 
-           
+
             ButtonRabbitProcess();
         }
     }
