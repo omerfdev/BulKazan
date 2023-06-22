@@ -91,7 +91,7 @@ namespace BulKazan
             {
                 btn.BackgroundImage = Image.FromFile(btn.Tag.ToString());
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
-                Task.Delay(1000).Wait();
+                Task.Delay(1000).Wait();//new things coming out...
                 ComputerCount++; lblComputerCount.Text = ComputerCount.ToString(); if (ComputerCount == 5)
                 {
                     MessageBox.Show("Computer Win", "Tekrar Oynamak İster Misiniz?", MessageBoxButtons.YesNo);
